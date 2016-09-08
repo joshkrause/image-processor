@@ -6,6 +6,6 @@ Homestead.json
 .env
 
 /public/image-output/*
-/public/image-output/*
+/public/dropzone/*
 
 **/.gitkeep
