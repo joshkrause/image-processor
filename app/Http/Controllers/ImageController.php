@@ -47,7 +47,7 @@ class ImageController extends Controller
 	/*
 	* Dropzone uploads here
 	*/
-	public function uploadPhotos(Request $request)
+	public function uploadPhotos(dropzoneRequest $request)
 	{
 		$dropzone_path = base_path() . '/public/dropzone';
 

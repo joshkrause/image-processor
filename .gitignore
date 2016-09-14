@@ -8,4 +8,4 @@ Homestead.json
 /public/image-output/*
 /public/dropzone/*
 
-**/.gitkeep
+!**/.gitkeep
