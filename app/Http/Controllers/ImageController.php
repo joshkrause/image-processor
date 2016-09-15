@@ -6,6 +6,7 @@ use File;
 use Image;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Requests\dropzoneRequest;
 
 class ImageController extends Controller
 {
@@ -96,6 +97,7 @@ class ImageController extends Controller
 					}
 			    	$img = Image::make($file);
 
+
 			    	if($ratios[$i] == 'resize')
 			    	{
 						$img->resize($widths[$i], $heights[$i], function ($constraint) {
@@ -107,8 +109,9 @@ class ImageController extends Controller
 			    	{
 				        $img->fit($widths[$i], $heights[$i]);
 			    	}
+			    	$extension = File::extension($file);
+			       	$img->save($path .'/'.$name.'/'. sprintf('%04d', $count) .'.' . $extension);
 			    	$count++;
-			       	$img->save($path .'/'.$name.'/'. sprintf('%04d', $count) .'.png');
 				}
 			}
 		}
